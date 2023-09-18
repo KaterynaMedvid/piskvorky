@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+.nazev {
+  font-family: lobster;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(to bottom, #615dad, #ffc8da 50%);
+  overflow: hidden;
+  margin: -2px;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+
+}
+
+.hlavni_blok {
+
+  margin: 120px;
+  color: #ffffff;
+  width: 640px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  flex-grow: 0;
+  align-items: center;
+}
+
+.uvodni_obrazek {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.uvodni_text {
+  margin: 20px;
+}
+
+.blok_textu {
+  font-size: 20px;
+  background-color: #283e50;
+  width: 640px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+
+}
+
+
+
+.prvni_tlacitko {
+  text-align: center;
+  width: 640px;
+  background-color: #1fcca4;
+}
+
+.druhe_tlacitko {
+  text-align: center;
+  width: 640px;
+  background-color: #0197f6;
+}
+
+
+
+.prvni_tlacitko:hover {
+  background: #1cbb96;
+}
+
+.druhe_tlacitko:hover {
+  background: #0090e9;
+}
