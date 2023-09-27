@@ -1,70 +1,75 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 
-.nazev {
+.nazev,
+.nazev_html2 {
   font-family: lobster;
+  color: #ffffff;
 }
 
 html {
   box-sizing: border-box;
+
 }
 
 body {
   background: linear-gradient(to bottom, #615dad, #ffc8da 50%);
-  overflow: hidden;
-  margin: -2px;
-  padding: 0;
-  display: flex;
-  justify-content: center;
+  min-height: 100vh;
 
 }
 
 .hlavni_blok {
+  width: 100%;
 
-  margin: 120px;
+  max-width: 40vmin;
+  margin: auto;
+  margin-top: 100px;
+  margin-bottom: 100px;
+
   color: #ffffff;
-  width: 640px;
+
   display: flex;
   flex-direction: column;
-  justify-content: start;
-  flex-grow: 0;
-  align-items: center;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+
+  overflow: hidden;
+  min-height: auto;
 }
 
 .uvodni_obrazek {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
+  max-width: 100%;
 }
 
-.uvodni_text {
-  margin: 20px;
-}
 
 .blok_textu {
+  padding: 20px;
   font-size: 20px;
-  background-color: #283e50;
-  width: 640px;
-  display: flex;
-  flex-direction: column;
   text-align: center;
-
+  background-color: #283e50;
 }
 
-
+.tlacitka {
+  text-decoration: none;
+  color: white;
+  border: none;
+  font-size: 1rem;
+}
 
 .prvni_tlacitko {
   text-align: center;
-  width: 640px;
   background-color: #1fcca4;
+  height: 40px;
+  border: none;
 }
 
 .druhe_tlacitko {
   text-align: center;
-  width: 640px;
   background-color: #0197f6;
+  height: 40px;
+  border: none;
 }
-
 
 
 .prvni_tlacitko:hover {
@@ -73,4 +78,111 @@ body {
 
 .druhe_tlacitko:hover {
   background: #0090e9;
+}
+
+
+/* HTML DOKUMENT HRA */
+
+.body_hra {
+  display: flex;
+  align-items: center;
+  align-content: center;
+
+
+}
+
+.nazev_html2 {
+  margin: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 4vw;
+
+}
+
+.domcek_tlacitko {
+  background-color: #1fcca4;
+  border: none;
+  border-radius: 0.5rem;
+
+}
+
+.restart_tlacitko {
+  background-color: #0197f6;
+  border: none;
+  border-radius: 0.5rem;
+
+}
+
+
+.domcek_tlacitko:hover {
+  background: #1cbb96;
+}
+
+.restart_tlacitko:hover {
+  background: #0090e9;
+}
+
+.hraje {
+  color: #ffffff;
+  font-size: 1vw;
+  text-align: start;
+  vertical-align: center;
+  display: flex;
+  align-items: center;
+
+}
+
+.kolecko {
+  text-align: center;
+}
+
+.blok_tlacitek {
+  box-sizing: border-box;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+
+.blok_elementuv_hri {
+  max-width: 80vmin;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-self: center;
+  margin-left: 30vw;
+}
+
+.blok_policek {
+  border: 2px #333030 solid;
+  max-width: 80vmin;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+
+
+}
+
+.radek_policek {
+  display: flex;
+  flex-wrap: nowrap;
+
+}
+
+.policko {
+  background: #c077bc;
+  box-sizing: border-box;
+  width: calc(80vw/25);
+  height: calc(80vw/25);
+  border-color: #333030;
+}
+
+
+.policko:hover,
+.policko:focus {
+  background: #615dad;
 }
