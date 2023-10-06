@@ -130,9 +130,11 @@ body {
   display: flex;
   align-items: center;
 
+
 }
 
 .kolecko {
+  margin-left: 0.6vw;
   text-align: center;
 }
 
@@ -154,7 +156,8 @@ body {
   align-items: center;
   align-content: center;
   justify-self: center;
-  margin-left: 30vw;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .blok_policek {
@@ -178,6 +181,7 @@ body {
   box-sizing: border-box;
   width: calc(80vw/25);
   height: calc(80vw/25);
+  aspect-ratio: 1 / 1;
   border-color: #333030;
 }
 
@@ -185,4 +189,35 @@ body {
 .policko:hover,
 .policko:focus {
   background: #615dad;
+}
+
+.policko:checked {
+  background: none;
+}
+
+/* Ukol 3 */
+
+
+.board__field--circle {
+  background: #c077bc;
+  background: url(circle2.svg) no-repeat;
+  background-position: center;
+  background-size: 2vw;
+  margin: auto;
+  box-sizing: border-box;
+  width: calc(80vw/25);
+  height: calc(80vw/25);
+  border-color: #333030;
+}
+
+.board__field--cross {
+  background: #c077bc;
+  background: url(cross2.svg) no-repeat;
+  background-position: center;
+  background-size: 2vw;
+  margin: auto;
+  box-sizing: border-box;
+  width: calc(80vw/25);
+  height: calc(80vw/25);
+  border-color: #333030;
 }
