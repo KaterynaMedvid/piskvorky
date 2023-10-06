@@ -30,12 +30,8 @@ const domu = (event) => {
   }
 };
 
-document.body
-  .querySelector('button:nth-child(1)')
-  .addEventListener('click', udelej);
-document.body
-  .querySelector('button:nth-child(2)')
-  .addEventListener('click', udelej);
+document.body.querySelector('#b1').addEventListener('click', udelej);
+document.body.querySelector('#b2').addEventListener('click', udelej);
 document.body
   .querySelector('button:nth-child(3)')
   .addEventListener('click', udelej);
