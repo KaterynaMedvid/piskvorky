@@ -183,12 +183,14 @@ body {
   height: calc(80vw/25);
   aspect-ratio: 1 / 1;
   border-color: #333030;
+  cursor: pointer;
 }
 
 
-.policko:hover,
-.policko:focus {
+
+.policko:not([disabled]):hover {
   background: #615dad;
+  cursor: pointer;
 }
 
 .policko:checked {
@@ -202,22 +204,39 @@ body {
   background: #c077bc;
   background: url(circle2.svg) no-repeat;
   background-position: center;
-  background-size: 2vw;
+
   margin: auto;
   box-sizing: border-box;
   width: calc(80vw/25);
   height: calc(80vw/25);
   border-color: #333030;
+  background-size: 2vw;
+  animation-duration: 0.5s;
+  animation-name: zvetcuje;
 }
 
 .board__field--cross {
   background: #c077bc;
   background: url(cross2.svg) no-repeat;
   background-position: center;
-  background-size: 2vw;
+
   margin: auto;
   box-sizing: border-box;
   width: calc(80vw/25);
   height: calc(80vw/25);
   border-color: #333030;
+  background-size: 2vw;
+  animation-duration: 0.5s;
+  animation-name: zvetcuje;
+}
+
+
+@keyframes zvetcuje {
+  from {
+    background-size: 0.5vw;
+  }
+
+  to {
+    background-size: 2vw;
+  }
 }

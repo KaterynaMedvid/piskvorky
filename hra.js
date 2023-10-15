@@ -1,18 +1,46 @@
+import { findWinner } from 'https://unpkg.com/piskvorky@0.1.4';
+
 let currentPlayer = 'circle';
+
+const whoIsWinner = () => {
+  const vsePolicka = [];
+  document.body.querySelectorAll('.policko').forEach((button) => {
+    if (button.classList.contains('board__field--cross')) {
+      vsePolicka.push('x');
+    } else if (button.classList.contains('board__field--circle')) {
+      vsePolicka.push('o');
+    } else {
+      vsePolicka.push('_');
+    }
+  });
+  return findWinner(vsePolicka);
+};
 
 const udelej = (event) => {
   if (currentPlayer === 'cross') {
-    event.target.classList.add('board__field--cross');
-
+    event.target.className += ' board__field--cross';
     currentPlayer = 'circle';
     event.target.disabled = true;
     document.body.querySelector('.kolecko').src = 'circle.svg';
   } else {
-    event.target.classList.add('board__field--circle');
-
+    event.target.className += ' board__field--circle';
     currentPlayer = 'cross';
     event.target.disabled = true;
     document.body.querySelector('.kolecko').src = 'cross.svg';
+  }
+  const vitez = whoIsWinner();
+  if (vitez === 'o' || vitez === 'x') {
+    const alertOX = () => {
+      alert(`Vyhrál hráč z ${vitez}.`);
+      location.reload();
+    };
+    setTimeout(alertOX, 250);
+  } else if (vitez === 'tie') {
+    const alertTIE = () => {
+      alert('REMIZA');
+      location.reload();
+    };
+    setTimeout(alertTIE, 250);
   }
 };
 
@@ -30,34 +58,12 @@ const domu = (event) => {
   }
 };
 
-document.body.querySelector('#b1').addEventListener('click', udelej);
-document.body.querySelector('#b2').addEventListener('click', udelej);
-document.body
-  .querySelector('button:nth-child(3)')
-  .addEventListener('click', udelej);
-document.body
-  .querySelector('button:nth-child(4)')
-  .addEventListener('click', udelej);
-document.body
-  .querySelector('button:nth-child(5)')
-  .addEventListener('click', udelej);
-document.body
-  .querySelector('button:nth-child(6)')
-  .addEventListener('click', udelej);
-document.body
-  .querySelector('button:nth-child(7)')
-  .addEventListener('click', udelej);
-document.body
-  .querySelector('button:nth-child(8)')
-  .addEventListener('click', udelej);
-document.body
-  .querySelector('button:nth-child(9)')
-  .addEventListener('click', udelej);
-document.body
-  .querySelector('button:nth-child(10)')
-  .addEventListener('click', udelej);
-
 document.body.querySelector('.domcek_tlacitko').addEventListener('click', domu);
 document.body
   .querySelector('.restart_tlacitko')
   .addEventListener('click', restart);
+
+const buttons = document.body.querySelectorAll('.policko');
+buttons.forEach((button) => {
+  button.addEventListener('click', udelej);
+});
