@@ -30,11 +30,12 @@ const robot = async () => {
       }),
     },
   );
-  const { pozice, yy } = await response.json();
-  if (yy !== undefined) {
+  const { pozice } = await response.json();
+  if (pozice && pozice.x !== undefined && pozice.y !== undefined) {
+    return pozice.x + pozice.y * 10;
+  } else {
     return 'error';
   }
-  return pozice.x + pozice.y * 10;
 };
 
 const whoIsWinner = () => {
